@@ -1,0 +1,143 @@
+.whatsapp-buble {
+    position: fixed;
+    top: 77%;
+    right: 0px;
+    padding: 5px 12px;
+    background-color: #37b627;
+    color: #fff;
+    border-radius: 9px 0 0 9px;
+    z-index: 30;
+    text-decoration:none!important;
+}
+.whatsapp-buble:hover{
+    color:#37b627;
+		background-color: #fff;
+		border: 1px solid #37b627;
+    text-decoration:none!important;
+}
+
+.whatsapp-buble-text {
+    position: fixed;
+    top: 78.3%;
+    right: 42px;
+    color: #fff;
+    border-radius: 9px 0 0 9px;
+    background-repeat: no-repeat;
+    line-height: 16px;
+    z-index: 30;
+}
+.whatsapp-buble-text {
+    animation-duration: 3s;
+    animation-name: bounceIn;
+    animation-iteration-count: infinite;
+}
+
+.content-social-bar {
+    position: fixed;
+    z-index: 30;
+    top: 48%;
+    bottom: 50%;
+    right: 0;
+    display: block;
+}
+
+.redes {
+    bottom: 50%;
+    right: .5%;
+    display: block;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+}
+
+.fb{
+    padding: 5px 10px;
+    border: 1px solid #d8dfe5;
+    border-radius: 10px 0 0;
+    font-size:20px;
+    text-align:Center;
+    color:#0056b3;
+}
+.fb:hover{
+    transition: transform .2s;
+    transform: scale(1.2);
+    border-radius: 10px 0 0 10px;
+	background-color: #0056b3;
+    color: #fff;
+}
+.ins{
+    padding: 5px 7px;
+    border: 1px solid #d8dfe5;
+    border-radius: 0;
+    font-size:20px;
+    text-align:Center;
+    color:#D62977;
+}
+.ins:hover{
+    transition: transform .2s;
+    transform: scale(1.2);
+    border-radius: 10px 0 0 10px;
+	background-color: #D62977;
+    color: #fff;
+}
+.tiktok{
+    padding: 5px 7px;
+    border: 1px solid #d8dfe5;
+    border-radius: 0;
+    font-size:20px;
+    text-align:Center;
+    color:#000000;
+}
+.tiktok:hover{
+    transition: transform .2s;
+    transform: scale(1.2);
+    border-radius: 10px 0 0 10px;
+	background-color: #FE2C55;
+    color: #fff;
+}
+.linkedin{
+    padding: 5px 7px;
+    border: 1px solid #d8dfe5;
+    border-radius: 0;
+    font-size:20px;
+    text-align:Center;
+    color:#0E72A3;
+}
+.linkedin:hover{
+    transition: transform .2s;
+    transform: scale(1.2);
+    border-radius: 10px 0 0 10px;
+    background-color: #0E72A3;
+    color: #fff;
+}
+.twitter{
+    padding: 5px 7px;
+    border: 1px solid #d8dfe5;
+    border-radius: 0;
+    font-size:20px;
+    text-align:Center;
+    color:#179CF0;
+}
+.twitter:hover{
+    transition: transform .2s;
+    transform: scale(1.2);
+    border-radius: 10px 0 0 10px;
+    background-color: #179CF0;
+    color: #fff;
+}
+.youtub{
+    padding: 5px 7px;
+    border: 1px solid #d8dfe5;
+    border-radius: 0 0 0 10px;
+    font-size:20px;
+    text-align:Center;
+    color:#DF2016;
+}
+.youtub:hover{
+    transition: transform .2s;
+    transform: scale(1.2);
+    border-radius: 10px 0 0 10px;
+	background-color:#DF2016;
+    color: #fff;
+}
+

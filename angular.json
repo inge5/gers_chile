@@ -19,7 +19,7 @@
                             "create-hmac",
                             "axios"
                          ],
-                        "outputPath": "dist/GersWeb",
+                        "outputPath": "dist/GersWeb/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -110,7 +110,8 @@
                         "tsConfig": [
                             "tsconfig.app.json",
                             "tsconfig.spec.json",
-                            "e2e/tsconfig.json"
+                            "e2e/tsconfig.json",
+                            "tsconfig.server.json"
                         ],
                         "exclude": [
                             "**/node_modules/**"
@@ -127,6 +128,53 @@
                         "production": {
                             "devServerTarget": "GersWeb:serve:production"
                         }
+                    }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/GersWeb/server",
+                        "main": "server.ts",
+                        "tsConfig": "tsconfig.server.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "sourceMap": false,
+                            "optimization": true
+                        }
+                    }
+                },
+                "serve-ssr": {
+                    "builder": "@nguniversal/builders:ssr-dev-server",
+                    "options": {
+                        "browserTarget": "GersWeb:build",
+                        "serverTarget": "GersWeb:server"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "GersWeb:build:production",
+                            "serverTarget": "GersWeb:server:production"
+                        }
+                    }
+                },
+                "prerender": {
+                    "builder": "@nguniversal/builders:prerender",
+                    "options": {
+                        "browserTarget": "GersWeb:build:production",
+                        "serverTarget": "GersWeb:server:production",
+                        "routes": [
+                            "/"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {}
                     }
                 }
             }

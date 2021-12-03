@@ -13,7 +13,7 @@
         <div class="carousel-inner" *ngIf="sliderprincipal_data.acf">            
             <ng-container *ngFor="let home of sliderprincipal_data.acf.slider_principal; first as isFirst ">
                 <div class="carousel-item" *ngIf="home.imagen_de_fondo" [ngClass]="(isFirst) ? 'active' : ''">
-                    <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px">
+                    <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px;background-position: center;">
                         <div class="container pt-3 pb-3 h-100">
                             <div class="row align-items-center h-100">
                                 <div class="col-12 col-lg-8 pt-4 pb-4 my-auto">

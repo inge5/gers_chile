@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 declare function mainFunction();
 
@@ -10,11 +11,13 @@ declare function mainFunction();
 })
 export class ChileComponent implements OnInit {
 
-  constructor(private seo: SeoService) { }
+  constructor(private seo: SeoService, @Inject(PLATFORM_ID) private platformid) { }
 
   ngOnInit(): void {
-    this.seo.cambiarTitulo('GERS - Chile');
-    mainFunction();
+    if(isPlatformBrowser(this.platformid)){
+      this.seo.cambiarTitulo('GERS - Chile');
+      mainFunction();
+    }
   }
 
 }
