@@ -1,6 +1,7 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HomeClService } from '../../services/home-cl.service';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+import { SeoService } from '../../services/seo.service';
 
 @Pipe({ name: 'safeHtml'})
 export class SafeHtmlPipe implements PipeTransform  {
@@ -45,9 +46,10 @@ export class HomeClComponent implements OnInit {
   equipoTrabajo:any[] = [];
   vacantes:any[] = [];
 
-  constructor(private _sanitizer: DomSanitizer, private _homeClService:HomeClService, private _proyectosusa:HomeClService) { }
+  constructor(private _sanitizer: DomSanitizer, private _homeClService:HomeClService, private _proyectosusa:HomeClService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaInicio();
     this._homeClService.getHome()
       .subscribe((res:any) => {
         this.loader = false;

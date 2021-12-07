@@ -77,11 +77,11 @@
                             <div class="file-field big-2 mt-3">
                                 <div class="btn btn-cyan btn-lg float-left w-100">
                                   <span><i class="fas fa-cloud-upload-alt"></i> Adjuntar hoja de vida</span>
-                                  <input type="file" id="archivo" accept="image/jpeg,image/gif,image/png,application/pdf"
+                                  <input type="file" id="archivo" accept="application/pdf"
                                   (change)="onChange($event.target.files)" required>
                                 </div>
                                 <p class="file-name"></p>
-                                <label class="mt-4 size15 text-gray-dark line-height18 text-justify">El archivo adjunto debe estar en formato <b>.PDF o .DOCX</b> y no debe pesar más de <b>1.5 mb</b></label>
+                                <label class="mt-4 size15 text-gray-dark line-height18 text-justify">El archivo adjunto debe estar en formato <b>.PDF</b> y no debe pesar más de <b>1.5 mb</b></label>
                             </div>
                             <div class="form-check mt-5">
                                 <input type="checkbox" class="form-check-input" id="acepto" name="acepto" #acepto="ngModel" [(ngModel)]="interesado.acepto" required>

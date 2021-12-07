@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VacantesClService } from '../../../services/vacantes-cl.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { environment } from 'src/environments/environment';
 
 declare var $ : any; 
 
@@ -64,7 +65,7 @@ export class VacanteInternaClComponent implements OnInit {
       paqueteDeDatos.append('ubicacion', this.interesado.ubicacion);
       paqueteDeDatos.append('acepto', this.interesado.acepto);
       paqueteDeDatos.append('vacante', this.interesado.vacante) ;
-      var destino = "https://gers.com.co/backend/wp-content/themes/gers/formulario-vacante-interna/form-vacante-interna.php"; // El script que va a recibir los campos de formulario.
+      var destino = `${environment.domain}/wp-content/themes/gers/formulario-vacante-interna-chile/form-vacante-interna-chile.php`; // El script que va a recibir los campos de formulario.
             /* Se envia el paquete de datos por ajax. */
       $.ajax({
         url: destino,

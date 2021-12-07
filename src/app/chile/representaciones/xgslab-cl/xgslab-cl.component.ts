@@ -1,5 +1,6 @@
 import { PagesClService } from '../../../services/pages-cl.service';
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
   selector: 'app-xgslab-cl',
@@ -14,9 +15,10 @@ export class XgslabClComponent implements OnInit {
   modulo_data: any[] = [];
   seccion_3_data: any = {};
 
-  constructor(private _xgslab:PagesClService) { }
+  constructor(private _xgslab:PagesClService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaXgslab();
     this._xgslab.getXgslab()
       .subscribe((res:any) => {
         this.loader = false;

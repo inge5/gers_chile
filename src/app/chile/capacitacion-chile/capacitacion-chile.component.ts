@@ -4,6 +4,7 @@ import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
 import LocalEs from '@fullcalendar/core/locales/es';
 import * as moment from 'moment';
 import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
+import { SeoService } from 'src/app/services/seo.service';
 declare var $: any;
 
 @Component({
@@ -25,9 +26,10 @@ export class CapacitacionChileComponent implements OnInit {
   eventosFiltro: any[];
   capacitacionesFiltroTemp: any[];
 
-  constructor(private capacitacionesS: CapacitacionesService, private router: Router) { }
+  constructor(private capacitacionesS: CapacitacionesService, private router: Router, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaCapacitaciones();
     this.asignarEventos();
     this.getCategoriasFiltro();
     moment.locale('es');

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesClService } from '../../../services/pages-cl.service';
 
 
@@ -15,9 +16,10 @@ export class NeplanClComponent implements OnInit {
   info_data: any = {};
   public activePillIndex:number = 0;
 
-  constructor(private _neplan:PagesClService) { }
+  constructor(private _neplan:PagesClService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaNeplan();
     this._neplan.getNeplan()
       .subscribe((res:any) => {
         this.loader = false;

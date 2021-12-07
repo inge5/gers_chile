@@ -1,50 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CapacitacionesService {
-
-  url: string = "https://gers.com.co/backend/wp-json/wp/v2";
-  url_usa: string = "https://gers.com.co/backend/usa/wp-json/wp/v2";
-  url_chile: string = "https://gers.com.co/backend/chile/wp-json/wp/v2";
-  url_mexico: string = "https://gers.com.co/backend/mexico/wp-json/wp/v2";
+  url_chile: string = `${environment.domain}/chile/wp-json/wp/v2`;
 
   constructor(private http: HttpClient) {
    }
-
-   //Colombia
-
-   getCapacitaciones(){
-     return this.http.get(`${this.url}/capacitaciones`);
-   }
-   getCategoriaCapacitaciones(){
-     return this.http.get(`${this.url}/categorias_capacitaciones`)
-   }
-   getCategoriaCapacitacionesId(id: number){
-     return this.http.get(`${this.url}/categorias_capacitaciones/${id}`);
-   }
-   getCapacitacionesId(id: number){
-    return this.http.get(`${this.url}/capacitaciones/${id}`);
-  }
-
-  //Usa
-
-  getCapacitacionesUsa(){
-    return this.http.get(`${this.url_usa}/capacitaciones`);
-  }
-  getCategoriaCapacitacionesUsa(){
-    return this.http.get(`${this.url_usa}/categorias_capacitaciones`)
-  }
-  getCategoriaCapacitacionesIdUsa(id: number){
-    return this.http.get(`${this.url_usa}/categorias_capacitaciones/${id}`);
-  }
-  getCapacitacionesIdUsa(id: number){
-   return this.http.get(`${this.url_usa}/capacitaciones/${id}`);
- }
-
- //Chile
 
  getCapacitacionesChile(){
   return this.http.get(`${this.url_chile}/capacitaciones`);
@@ -57,20 +22,5 @@ getCategoriaCapacitacionesIdChile(id: number){
 }
 getCapacitacionesIdChile(id: number){
  return this.http.get(`${this.url_chile}/capacitaciones/${id}`);
-}
-
-//Mexico
-
-getCapacitacionesMexico(){
-  return this.http.get(`${this.url_mexico}/capacitaciones`);
-}
-getCategoriaCapacitacionesMexico(){
-  return this.http.get(`${this.url_mexico}/categorias_capacitaciones`)
-}
-getCategoriaCapacitacionesIdMexico(id: number){
-  return this.http.get(`${this.url_mexico}/categorias_capacitaciones/${id}`);
-}
-getCapacitacionesIdMexico(id: number){
- return this.http.get(`${this.url_mexico}/capacitaciones/${id}`);
 }
 }

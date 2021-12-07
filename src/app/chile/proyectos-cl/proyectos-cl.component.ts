@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesClService } from '../../services/pages-cl.service';
 
 
@@ -13,9 +14,10 @@ export class ProyectosClComponent implements OnInit {
 
   loader = true;
 
-  constructor(private _proyectosService:PagesClService) { }
+  constructor(private _proyectosService:PagesClService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaProyectos();
     this._proyectosService.getProyectos()
       .subscribe((res:any) => {
         this.loader = false;

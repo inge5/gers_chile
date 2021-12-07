@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PagesClService } from 'src/app/services/pages-cl.service';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
   selector: 'app-dranetz-cl',
@@ -13,9 +14,10 @@ export class DranetzClComponent implements OnInit {
   item_tab_data: any[] = [];
   public activePillIndex:number = 0;
 
-  constructor(private _dranetz:PagesClService) { }
+  constructor(private _dranetz:PagesClService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaDranetz();
     this._dranetz.getDranetz()
       .subscribe((res:any) => {
         this.loader = false;

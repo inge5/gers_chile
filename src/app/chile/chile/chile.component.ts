@@ -15,7 +15,6 @@ export class ChileComponent implements OnInit {
 
   ngOnInit(): void {
     if(isPlatformBrowser(this.platformid)){
-      this.seo.cambiarTitulo('GERS - Chile');
       mainFunction();
     }
   }

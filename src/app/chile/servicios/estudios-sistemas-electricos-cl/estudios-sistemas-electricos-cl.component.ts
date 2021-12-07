@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesClService } from '../../../services/pages-cl.service';
 
 @Component({
@@ -16,9 +17,10 @@ export class EstudiosSistemasElectricosClComponent implements OnInit {
   texto_columna_2_data: any = {};
   public activePillIndex:number = 0;
 
-  constructor(private _estudiosistemaselectricos:PagesClService) { }
+  constructor(private _estudiosistemaselectricos:PagesClService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaEstudiosSistemas();
     this._estudiosistemaselectricos.getEstudioSistemasElectricos()
       .subscribe((res:any) => {
         this.loader = false;
