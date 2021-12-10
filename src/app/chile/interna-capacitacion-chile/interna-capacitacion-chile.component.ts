@@ -76,6 +76,7 @@ export class InternaCapacitacionChileComponent implements OnInit {
           }); 
 
         form.reset();
+        this.usuario.pais = "Chile";
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }

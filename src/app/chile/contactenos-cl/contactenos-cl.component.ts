@@ -64,6 +64,7 @@ export class ContactenosClComponent implements OnInit {
             showConfirmButton: true
           }); 
         form.reset();
+        this.user.pais = 'Chile';
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }
