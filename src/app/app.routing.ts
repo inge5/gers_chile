@@ -1,4 +1,3 @@
-
 import { Routes, RouterModule } from '@angular/router';
 
 /* Chile*/
@@ -24,39 +23,60 @@ import { DranetzClComponent } from './chile/representaciones/dranetz-cl/dranetz-
 
 let APP_ROUTES: Routes = [];
 
-    APP_ROUTES = [
-        {
-            path: '', component: ChileComponent,
-            children: [
-                { path: '', component: HomeClComponent },
-                { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
-                { path: 'capacitaciones', component: CapacitacionChileComponent },
-                { path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent },
-                { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
-                { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
-                { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
-                { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
-                { path: 'neplan-cl', component: NeplanClComponent },
-                { path: 'contactenos-cl', component: ContactenosClComponent },
-                { path: 'proyectos-cl', component: ProyectosClComponent },
-                { path: 'publicaciones-cl', component: PublicacionesClComponent },
-                { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent },
-                { path: 'xgslab-cl', component: XgslabClComponent },
-                { path: 'dranetz-cl', component: DranetzClComponent },
-                { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
-                { path: 'vacantes/:slug', component: VacanteInternaClComponent },
-                { path: 'buscador', component: BuscadorClComponent },
-                { path: '**', redirectTo: '', pathMatch: 'full' }
-            ]
-        },
-        { path: '**', pathMatch: 'full', redirectTo: '' }
-    ]
-
+APP_ROUTES = [
+  {
+    path: '',
+    component: ChileComponent,
+    children: [
+      { path: '', component: HomeClComponent },
+      {
+        path: 'pensamiento-corporativo-cl',
+        component: PensamientoCorporativoClComponent,
+      },
+      { path: 'capacitaciones', component: CapacitacionChileComponent },
+      {
+        path: 'capacitaciones/:id',
+        component: InternaCapacitacionChileComponent,
+      },
+      {
+        path: 'politica-gestion-integral-cl',
+        component: PoliticaGestionIntegralClComponent,
+      },
+      {
+        path: 'estudios-sistemas-cl',
+        component: EstudiosSistemasElectricosClComponent,
+      },
+      { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
+      {
+        path: 'pruebas-automatizacion-cl',
+        component: PruebasAutomatizacionControlClComponent,
+      },
+      { path: 'neplan-cl', component: NeplanClComponent },
+      { path: 'contactenos-cl', component: ContactenosClComponent },
+      { path: 'proyectos-cl', component: ProyectosClComponent },
+      { path: 'publicaciones-cl', component: PublicacionesClComponent },
+      {
+        path: 'publicaciones-cl/:slug',
+        component: PublicacionInternaClComponent,
+      },
+      { path: 'xgslab-cl', component: XgslabClComponent },
+      { path: 'dranetz-cl', component: DranetzClComponent },
+      {
+        path: 'trabaje-con-nosotros-cl',
+        component: TrabajeConNosotrosClComponent,
+      },
+      { path: 'vacantes/:slug', component: VacanteInternaClComponent },
+      { path: 'buscador', component: BuscadorClComponent },
+      { path: '**', redirectTo: '', pathMatch: 'full' },
+    ],
+  },
+  { path: '**', pathMatch: 'full', redirectTo: '' },
+];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {
-    useHash: true,
-    onSameUrlNavigation: "ignore",
-    anchorScrolling: 'enabled',
-    scrollPositionRestoration: 'enabled',
-    initialNavigation: 'enabled'
+  useHash: false,
+  onSameUrlNavigation: 'ignore',
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'enabled',
+  initialNavigation: 'enabled',
 });

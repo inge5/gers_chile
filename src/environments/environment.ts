@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  baseChile: 'http://localhost/gers-wordpress/chile/wp-json/acf/v3',
-  urlChile:  'http://localhost/gers-wordpress/chile/wp-json/wp/v2',
-  menuChile: 'http://localhost/gers-wordpress/chile/wp-json/menus/v1',
-  domain: 'http://localhost/gers-wordpress'
+  baseChile: 'https://gers.com.co/backend/chile/wp-json/acf/v3',
+  urlChile: 'https://gers.com.co/backend/chile/wp-json/wp/v2',
+  menuChile: 'https://gers.com.co/backend/chile/wp-json/menus/v1',
+  domain: 'https://gers.com.co/backend',
 };
 
 /*

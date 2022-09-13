@@ -1,59 +1,140 @@
-<ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'140px' }"></ngx-skeleton-loader>
+<ngx-skeleton-loader
+  count="1"
+  *ngIf="loader"
+  animation="progress"
+  [theme]="{ height: '140px' }"
+></ngx-skeleton-loader>
 <div *ngIf="!loader">
-    <div class="bannerInterna" *ngIf="banner_data.banner_principal" [ngStyle]="{ 'background-image': 'url(' + banner_data.banner_principal + ')'}">
-        <p class="text-center pt-5 pb-5">
-            <img *ngIf="banner_data.logo_imagen" src="{{ banner_data.logo_imagen }}" alt="" class="img-fluid">
-        </p>
-    </div>    
+  <div
+    class="bannerInterna"
+    *ngIf="banner_data.banner_principal"
+    [ngStyle]="{
+      'background-image': 'url(' + banner_data.banner_principal + ')'
+    }"
+  >
+    <p class="text-center pt-5 pb-5">
+      <img
+        *ngIf="banner_data.logo_imagen"
+        src="{{ banner_data.logo_imagen }}"
+        alt=""
+        class="img-fluid"
+      />
+    </p>
+  </div>
 </div>
 <div class="container tabsCustom">
-    <div class="row align-items-center mt-5">
-        <div class="col-sm-3 align-items-center">
-            <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'120px' }"></ngx-skeleton-loader>
-            <div *ngIf="!loader">
-                <img *ngIf="seccion_1_data.logo" src="{{ seccion_1_data.logo }}" alt="" class="img-fluid box-shadow">
-            </div>
-        </div>
-        <div class="col-sm-9 align-items-center my-auto">
-            <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
-            <div *ngIf="!loader">
-                <p class="m-0" [innerHTML]="seccion_1_data.texto_inicial"></p>
-            </div>
-        </div>
+  <div class="row align-items-center mt-5">
+    <div class="col-sm-3 align-items-center">
+      <ngx-skeleton-loader
+        count="1"
+        *ngIf="loader"
+        animation="progress"
+        [theme]="{ height: '120px' }"
+      ></ngx-skeleton-loader>
+      <div *ngIf="!loader">
+        <img
+          *ngIf="seccion_1_data.logo"
+          src="{{ seccion_1_data.logo }}"
+          alt=""
+          class="img-fluid box-shadow"
+        />
+      </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
-            <div *ngIf="!loader">
-                <h4 class="mt-4 text-center text-blue1 font-weight-bold">{{ seccion_2_data.titulo_modulos }}</h4>
-            </div>
+    <div class="col-sm-9 align-items-center my-auto">
+      <ngx-skeleton-loader
+        count="3"
+        *ngIf="loader"
+        animation="progress"
+        [theme]="{ height: '20px' }"
+      ></ngx-skeleton-loader>
+      <div *ngIf="!loader">
+        <p class="m-0" [innerHTML]="seccion_1_data.texto_inicial"></p>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '40px', width: '150px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <a
+              class="btn rounded mt-2 mb-2 btn-outline2 d-lg-flex justify-content-between align-items-center"
+              href="{{ seccion_1_data.boton_url }}"
+              target="_blank"
+              >{{ seccion_1_data.boton_texto }}
+              <i class="fas fa-download width10"></i
+            ></a>
+          </div>
         </div>
+      </div>
     </div>
-    <ngx-skeleton-loader class="d-flex" count="3" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'200px','border-radius': '10px' }"></ngx-skeleton-loader>
-    <div class="row mt-4">
-        <ng-container *ngFor="let modulo of modulo_data">
-            <div *ngIf="!loader" class="col-sm-4 d-flex align-items-stretch">
-                <div class="card box-shadow">
-                    <div class="card-body">
-                        <h5 class="card-title text-blue1 font-weight-bold">{{ modulo.titulo }}</h5>
-                        <p class="card-text" [innerHTML]="modulo.texto_general"></p>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ngx-skeleton-loader
+        count="1"
+        *ngIf="loader"
+        animation="progress"
+        [theme]="{ height: '40px' }"
+      ></ngx-skeleton-loader>
+      <div *ngIf="!loader">
+        <h4 class="mt-4 text-center text-blue1 font-weight-bold">
+          {{ seccion_2_data.titulo_modulos }}
+        </h4>
+      </div>
     </div>
-    <div class="row mt-5 mb-5">
-        <div class="col-sm-6">
-            <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'250px' }"></ngx-skeleton-loader>
-            <div *ngIf="!loader">
-                <img *ngIf="seccion_3_data.imagen" src="{{ seccion_3_data.imagen }}" alt="" class="img-fluid">
-            </div>
+  </div>
+  <ngx-skeleton-loader
+    class="d-flex"
+    count="3"
+    *ngIf="loader"
+    animation="progress"
+    appearance="circle"
+    [theme]="{ width: '100%', height: '200px', 'border-radius': '10px' }"
+  ></ngx-skeleton-loader>
+  <div class="row mt-4">
+    <ng-container *ngFor="let modulo of modulo_data">
+      <div *ngIf="!loader" class="col-sm-4 d-flex align-items-stretch">
+        <div class="card box-shadow">
+          <div class="card-body">
+            <h5 class="card-title text-blue1 font-weight-bold">
+              {{ modulo.titulo }}
+            </h5>
+            <p class="card-text" [innerHTML]="modulo.texto_general"></p>
+          </div>
         </div>
-        <div class="col-sm-6">
-            <ngx-skeleton-loader count="7" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
-            <div *ngIf="!loader">
-                <p [innerHTML]="seccion_3_data.texto_general"></p>
-            </div>
-        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-sm-6">
+      <ngx-skeleton-loader
+        count="1"
+        *ngIf="loader"
+        animation="progress"
+        [theme]="{ height: '250px' }"
+      ></ngx-skeleton-loader>
+      <div *ngIf="!loader">
+        <img
+          *ngIf="seccion_3_data.imagen"
+          src="{{ seccion_3_data.imagen }}"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
     </div>
+    <div class="col-sm-6">
+      <ngx-skeleton-loader
+        count="7"
+        *ngIf="loader"
+        animation="progress"
+        [theme]="{ height: '20px' }"
+      ></ngx-skeleton-loader>
+      <div *ngIf="!loader">
+        <p [innerHTML]="seccion_3_data.texto_general"></p>
+      </div>
+    </div>
+  </div>
 </div>
